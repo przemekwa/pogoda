@@ -1,0 +1,21 @@
+C:\Documents and Settings\127356\Ustawienia lokalne\Dane aplikacji\Temporary Projects\pogoda\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\127356\Ustawienia lokalne\Dane aplikacji\Temporary Projects\pogoda\obj\x86\Debug\pogoda.Form1.resources
+C:\Documents and Settings\127356\Ustawienia lokalne\Dane aplikacji\Temporary Projects\pogoda\obj\x86\Debug\pogoda.Properties.Resources.resources
+C:\Documents and Settings\127356\Ustawienia lokalne\Dane aplikacji\Temporary Projects\pogoda\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\127356\Ustawienia lokalne\Dane aplikacji\Temporary Projects\pogoda\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\127356\Ustawienia lokalne\Dane aplikacji\Temporary Projects\pogoda\bin\Debug\pogoda.exe
+C:\Documents and Settings\127356\Ustawienia lokalne\Dane aplikacji\Temporary Projects\pogoda\bin\Debug\pogoda.pdb
+C:\Documents and Settings\127356\Ustawienia lokalne\Dane aplikacji\Temporary Projects\pogoda\obj\x86\Debug\pogoda.exe
+C:\Documents and Settings\127356\Ustawienia lokalne\Dane aplikacji\Temporary Projects\pogoda\obj\x86\Debug\pogoda.pdb
+d:\visual studio 2010\Projects\pogoda\pogoda\obj\x86\Debug\pogoda.exe
+d:\visual studio 2010\Projects\pogoda\pogoda\obj\x86\Debug\pogoda.pdb
+d:\Visual Studio 2010\Projects\pogoda\pogoda\bin\Debug\pogoda.exe
+d:\Visual Studio 2010\Projects\pogoda\pogoda\bin\Debug\pogoda.pdb
+d:\Visual Studio 2010\Projects\pogoda\pogoda\obj\x86\Debug\ResolveAssemblyReference.cache
+d:\Visual Studio 2010\Projects\pogoda\pogoda\obj\x86\Debug\pogoda.Form1.resources
+d:\Visual Studio 2010\Projects\pogoda\pogoda\obj\x86\Debug\pogoda.Properties.Resources.resources
+d:\Visual Studio 2010\Projects\pogoda\pogoda\obj\x86\Debug\GenerateResource.read.1.tlog
+d:\Visual Studio 2010\Projects\pogoda\pogoda\obj\x86\Debug\GenerateResource.write.1.tlog
+d:\visual studio 2010\Projects\pogoda\pogoda\obj\x86\Debug\pogoda.dodaj.resources
+d:\visual studio 2010\Projects\pogoda\pogoda\obj\x86\Debug\pogoda.Form2.resources
+d:\visual studio 2010\Projects\pogoda\pogoda\obj\x86\Debug\pogoda.Form3.resources
