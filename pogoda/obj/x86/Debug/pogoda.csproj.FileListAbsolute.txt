@@ -19,3 +19,25 @@ d:\Visual Studio 2010\Projects\pogoda\pogoda\obj\x86\Debug\GenerateResource.writ
 d:\visual studio 2010\Projects\pogoda\pogoda\obj\x86\Debug\pogoda.dodaj.resources
 d:\visual studio 2010\Projects\pogoda\pogoda\obj\x86\Debug\pogoda.Form2.resources
 d:\visual studio 2010\Projects\pogoda\pogoda\obj\x86\Debug\pogoda.Form3.resources
+D:\Dropbox\c#\Projects\pogoda\pogoda\obj\x86\Debug\pogoda.exe
+D:\Dropbox\c#\Projects\pogoda\pogoda\obj\x86\Debug\pogoda.pdb
+D:\Dropbox\c#\Projects\pogoda\pogoda\bin\Debug\pogoda.exe
+D:\Dropbox\c#\Projects\pogoda\pogoda\bin\Debug\pogoda.pdb
+D:\Dropbox\c#\Projects\pogoda\pogoda\obj\x86\Debug\pogoda.csprojResolveAssemblyReference.cache
+D:\Dropbox\c#\Projects\pogoda\pogoda\obj\x86\Debug\pogoda.dodaj.resources
+D:\Dropbox\c#\Projects\pogoda\pogoda\obj\x86\Debug\pogoda.Form1.resources
+D:\Dropbox\c#\Projects\pogoda\pogoda\obj\x86\Debug\pogoda.Form2.resources
+D:\Dropbox\c#\Projects\pogoda\pogoda\obj\x86\Debug\pogoda.Form3.resources
+D:\Dropbox\c#\Projects\pogoda\pogoda\obj\x86\Debug\pogoda.Properties.Resources.resources
+D:\Dropbox\c#\Projects\pogoda\pogoda\obj\x86\Debug\pogoda.csproj.GenerateResource.Cache
+J:\Dropbox\Dropbox\c#\Projects\pogoda\pogoda\obj\x86\Debug\pogoda.exe
+J:\Dropbox\Dropbox\c#\Projects\pogoda\pogoda\obj\x86\Debug\pogoda.pdb
+J:\Dropbox\Dropbox\c#\Projects\pogoda\pogoda\bin\Debug\pogoda.exe
+J:\Dropbox\Dropbox\c#\Projects\pogoda\pogoda\bin\Debug\pogoda.pdb
+J:\Dropbox\Dropbox\c#\Projects\pogoda\pogoda\obj\x86\Debug\pogoda.csprojResolveAssemblyReference.cache
+J:\Dropbox\Dropbox\c#\Projects\pogoda\pogoda\obj\x86\Debug\pogoda.dodaj.resources
+J:\Dropbox\Dropbox\c#\Projects\pogoda\pogoda\obj\x86\Debug\pogoda.Form1.resources
+J:\Dropbox\Dropbox\c#\Projects\pogoda\pogoda\obj\x86\Debug\pogoda.Form2.resources
+J:\Dropbox\Dropbox\c#\Projects\pogoda\pogoda\obj\x86\Debug\pogoda.Form3.resources
+J:\Dropbox\Dropbox\c#\Projects\pogoda\pogoda\obj\x86\Debug\pogoda.Properties.Resources.resources
+J:\Dropbox\Dropbox\c#\Projects\pogoda\pogoda\obj\x86\Debug\pogoda.csproj.GenerateResource.Cache

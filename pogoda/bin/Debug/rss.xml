@@ -2,7 +2,7 @@
 <!--Nazwa pliku rss.xml-->
 <RSS data="2012-06-20" godzina="10:41:03">
   <zrodlo dataDodania="2012-06-20">http://feeds.bbci.co.uk/news/rss.xml</zrodlo>
-  <zrodlo dataDodania="2012-06-20">http://rss.gazeta.pl/pub/rss/wiadomosci.xml</zrodlo>
+  <!--<zrodlo dataDodania="2012-06-20">http://rss.gazeta.pl/pub/rss/wiadomosci.xml</zrodlo<!>-->
   <zrodlo dataDodania="2012-06-20">http://www.epoznan.pl/rss.php</zrodlo>
   <zrodlo dataDodania="2012-06-25">http://www.tvn24.pl/najnowsze.xml</zrodlo>
   <zrodlo dataDodania="2012-06-28">http://www.tvn24.pl/internet-hi-tech-media,40.xml</zrodlo>

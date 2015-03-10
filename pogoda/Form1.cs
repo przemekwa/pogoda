@@ -91,7 +91,7 @@ namespace pogoda
                         try
                         {
                             label5.Invoke((Delegacja)delegate { label5.Location = new System.Drawing.Point(279 - i, 25); });
-                            Thread.Sleep(5);
+                            Thread.Sleep(10);
                         }
                         catch (InvalidOperationException)
                         {
@@ -100,7 +100,7 @@ namespace pogoda
                     else
                     {
                         label5.Location = new System.Drawing.Point(279 - i, 66);
-                        Thread.Sleep(5);
+                        Thread.Sleep(10);
                     }
             }
          

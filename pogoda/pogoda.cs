@@ -83,10 +83,6 @@ namespace pogoda
             {
                 obrazek = (node.InnerText).ToString();
             }
-
-
-
-
         }
     }
 }
