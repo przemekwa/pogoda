@@ -15,7 +15,7 @@ namespace pogoda
         public Thread trd;
         List<Message> ListaWiadomosci = new List<Message>();
         List<string> ListaRSS = new List<string>();
-        RssRepository xml = new RssRepository();
+        RssApi xml = new RssApi();
         int MAX_ADRESY_RSS = 0;
         int AKTUALNY_ADRES_RSS = 0;
         
@@ -26,9 +26,9 @@ namespace pogoda
             
 
             InitializeComponent();
-            xml.StworzXMLa();
+            xml.CreateFile();
             timer1.Start();
-            ListaRSS = xml.Odczytaj();
+            ListaRSS = xml.Read();
 
             MAX_ADRESY_RSS = ListaRSS.Count;
 
@@ -52,12 +52,12 @@ namespace pogoda
             
             var weatherDto = weatherModel.Get();
 
-            label1.Text = weatherDto.opis;
-            label2.Text = weatherDto.temperatura + "°C";
-            label3.Text = weatherDto.temperatura_odczuwalna + "°C";
-            label4.Text = weatherDto.cisnienie + "hPa";
-            label6.Text = weatherDto.lokalizacja;
-            pictureBox1.Load(weatherDto.obrazek);
+            label1.Text = weatherDto.Description;
+            label2.Text = weatherDto.Temperature + "°C";
+            label3.Text = weatherDto.TemperatureFeel + "°C";
+            label4.Text = weatherDto.Pressure + "hPa";
+            label6.Text = weatherDto.Location;
+            pictureBox1.Load(weatherDto.Image);
 
             var seriwisRSS = new Rss(adres);
 
@@ -200,7 +200,7 @@ namespace pogoda
 
         private void Form1_Activated(object sender, EventArgs e)
         {
-            ListaRSS = xml.Odczytaj();
+            ListaRSS = xml.Read();
         }
 
         private void timer1_Tick(object sender, EventArgs e)

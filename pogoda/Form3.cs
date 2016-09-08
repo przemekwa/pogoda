@@ -11,12 +11,12 @@ namespace pogoda
 {
     public partial class Form3 : Form
     {
-        RssRepository xml = new RssRepository();
+        RssApi xml = new RssApi();
         public Form3()
         {
             InitializeComponent();
             List<string> ListaRss = new List<string>();
-            ListaRss = xml.Odczytaj();
+            ListaRss = xml.Read();
             foreach (string r in ListaRss)
             {
                 listBox1.Items.Add(r);
@@ -25,7 +25,7 @@ namespace pogoda
 
         private void listBox1_DoubleClick(object sender, EventArgs e)
         {
-            xml.Usun(listBox1.Items[listBox1.SelectedIndex].ToString());
+            xml.Delete(listBox1.Items[listBox1.SelectedIndex].ToString());
             this.Close();
         }
 

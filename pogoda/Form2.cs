@@ -22,8 +22,8 @@ namespace pogoda
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                RssRepository xml = new RssRepository();
-                xml.Dodaj(textBox1.Text);
+                RssApi xml = new RssApi();
+                xml.Add(textBox1.Text);
                 this.Close();
             }
             if (e.KeyChar == (char)Keys.Escape)

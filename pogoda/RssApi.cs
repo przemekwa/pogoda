@@ -7,10 +7,9 @@ using System.IO;
 
 namespace pogoda
 {
-    class RssRepository
+    public class RssApi
     {
-
-        string nazwaPliku;
+        private const string FILE_NAME = "rss.xml";
 
         XmlDocument plik = new XmlDocument();
 
@@ -20,20 +19,13 @@ namespace pogoda
 
         XmlAttribute atrybut;
 
-
-        public RssRepository()
+       public void CreateFile()
         {
-            nazwaPliku = "rss.xml";
-        }
-
-        public void StworzXMLa()
-        {
-
-            if (!CzyIstniejePlik())
+            if (!File.Exists(FILE_NAME))
             {
-                XmlTextWriter nowy_xml = new XmlTextWriter(nazwaPliku, null);
+                var nowy_xml = new XmlTextWriter(FILE_NAME, null);
                 nowy_xml.WriteStartDocument();
-                nowy_xml.WriteComment("Nazwa pliku " + nazwaPliku);
+                nowy_xml.WriteComment("Nazwa pliku " + FILE_NAME);
                 nowy_xml.WriteStartElement("RSS");
                 nowy_xml.WriteAttributeString("data", System.DateTime.Now.ToString().Substring(0, 10));
                 nowy_xml.WriteAttributeString("godzina", System.DateTime.Now.ToString().Substring(11));
@@ -42,9 +34,9 @@ namespace pogoda
             }
         }
        
-        public void Dodaj(string zrodlo)
+        public void Add(string zrodlo)
         {
-            plik.Load(nazwaPliku);
+            plik.Load(FILE_NAME);
                    
             node = plik.CreateElement("zrodlo");
             node.InnerText =zrodlo;
@@ -52,46 +44,28 @@ namespace pogoda
             atrybut.Value = System.DateTime.Now.ToString().Substring(0, 10);
             node.Attributes.Append(atrybut);
             plik.DocumentElement.AppendChild(node);
-            plik.Save(nazwaPliku);
+            plik.Save(FILE_NAME);
                
         }
         
-        public List<string> Odczytaj()
+        public List<string> Read()
         {
-            List<string> l = new List<string>();
+            plik.Load(FILE_NAME);
 
-            plik.Load(nazwaPliku);
             nodes = plik.SelectNodes("/RSS/zrodlo");
 
-            foreach (XmlNode n in nodes)
-            {
-               l.Add(n.InnerText);
-            }
-            return l;
+            return (from XmlNode n in nodes select n.InnerText).ToList();
         }
        
-        public void Usun(string nazwa)
+        public void Delete(string nazwa)
         {
-            plik.Load(nazwaPliku);
+            plik.Load(FILE_NAME);
 
             node = plik.SelectSingleNode("/RSS/zrodlo[. =\"" + nazwa + "\" ]");
-            node.ParentNode.RemoveChild(node);
+
+            node?.ParentNode?.RemoveChild(node);
             
-            plik.Save(nazwaPliku);
+            plik.Save(FILE_NAME);
         }
-
-        bool CzyIstniejePlik()
-        {
-            string[] files = Directory.GetFiles(".", nazwaPliku);
-
-            if (files.Length == 0)
-            {
-                return false;
-            }
-
-            return true;
-        }
-
-
     }
 }
