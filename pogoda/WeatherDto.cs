@@ -2,12 +2,12 @@ namespace pogoda
 {
     public class WeatherDto
     {
-        public double temperatura { get; set; }
-        public double temperatura_odczuwalna { get; set; }
-        public double wiatr { get; set; }
-        public double cisnienie { get; set; }
-        public string opis { get; set; }
-        public string obrazek { get; set; }
-        public string lokalizacja { get; set; }
+        public double Temperature { get; set; }
+        public double TemperatureFeel { get; set; }
+        public double Wind { get; set; }
+        public double Pressure { get; set; }
+        public string Description { get; set; }
+        public string Image { get; set; }
+        public string Location { get; set; }
     }
 }

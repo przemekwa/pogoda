@@ -48,7 +48,7 @@ namespace pogoda
    
         private void DawajDane(string adres)
         {
-            var weatherModel = new WeatherModel("94cac1b2a3993022");
+            var weatherModel = new WeatherApi("94cac1b2a3993022");
             
             var weatherDto = weatherModel.Get();
 
