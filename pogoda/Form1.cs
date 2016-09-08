@@ -15,37 +15,32 @@ namespace pogoda
         public Thread trd;
         List<Message> ListaWiadomosci = new List<Message>();
         List<string> ListaRSS = new List<string>();
-        RssApi xml = new RssApi();
+        SourceRepoApi xml = new SourceRepoApi();
         int MAX_ADRESY_RSS = 0;
         int AKTUALNY_ADRES_RSS = 0;
-        
-
 
         public Form1()
         {
-            
-
             InitializeComponent();
+
             xml.CreateFile();
+
             timer1.Start();
             ListaRSS = xml.Read();
-
             MAX_ADRESY_RSS = ListaRSS.Count;
-
-
 
             foreach (var adres in ListaRSS)
             {
                 contextMenuStrip1.Items.Add(adres);
             }
 
-           DawajDane(ListaRSS.ElementAt(PodajNastepnyNumeradresuRSS()));
-            
+            DawajDane(ListaRSS.ElementAt(PodajNastepnyNumeradresuRSS()));
+
             watki();
-   
+
         }
-      
-   
+
+
         private void DawajDane(string adres)
         {
             var weatherModel = new WeatherApi("94cac1b2a3993022");
@@ -57,11 +52,21 @@ namespace pogoda
             label3.Text = weatherDto.TemperatureFeel + "°C";
             label4.Text = weatherDto.Pressure + "hPa";
             label6.Text = weatherDto.Location;
+
             pictureBox1.Load(weatherDto.Image);
 
-            var seriwisRSS = new Rss(adres);
+            try
+            {
+                var seriwisRSS = new RssParser(adres);
+                ListaWiadomosci = seriwisRSS.GetMessages().ToList();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Błąd w adresie xml-a. Zostanie wczytany rss gazeta.pl", "Poważny", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign, true);
+            }
+           
 
-            ListaWiadomosci = seriwisRSS.PobierzWiadomosci(); 
+          
         }
         private void watki()
         {

@@ -22,7 +22,7 @@ namespace pogoda
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                RssApi xml = new RssApi();
+                SourceRepoApi xml = new SourceRepoApi();
                 xml.Add(textBox1.Text);
                 this.Close();
             }
