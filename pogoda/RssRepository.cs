@@ -7,7 +7,7 @@ using System.IO;
 
 namespace pogoda
 {
-    class obslugaXML
+    class RssRepository
     {
 
         string nazwaPliku;
@@ -21,7 +21,7 @@ namespace pogoda
         XmlAttribute atrybut;
 
 
-        public obslugaXML()
+        public RssRepository()
         {
             nazwaPliku = "rss.xml";
         }

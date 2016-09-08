@@ -5,7 +5,7 @@ using System.Text;
 
 namespace pogoda
 {
-    class wiadomosc
+    class Message
     {
         public string tytul { get; set; }
         public string tekst { get; set; }
@@ -13,7 +13,7 @@ namespace pogoda
         public string NazwaRSS { get; set; }
 
 
-        public wiadomosc(string title, string text,string DataPublikacji,string Nazwa)
+        public Message(string title, string text,string DataPublikacji,string Nazwa)
         {
             tytul = title;
             tekst = text;

@@ -11,11 +11,8 @@ d:\visual studio 2010\Projects\pogoda\pogoda\obj\x86\Debug\pogoda.exe
 d:\visual studio 2010\Projects\pogoda\pogoda\obj\x86\Debug\pogoda.pdb
 d:\Visual Studio 2010\Projects\pogoda\pogoda\bin\Debug\pogoda.exe
 d:\Visual Studio 2010\Projects\pogoda\pogoda\bin\Debug\pogoda.pdb
-d:\Visual Studio 2010\Projects\pogoda\pogoda\obj\x86\Debug\ResolveAssemblyReference.cache
 d:\Visual Studio 2010\Projects\pogoda\pogoda\obj\x86\Debug\pogoda.Form1.resources
 d:\Visual Studio 2010\Projects\pogoda\pogoda\obj\x86\Debug\pogoda.Properties.Resources.resources
-d:\Visual Studio 2010\Projects\pogoda\pogoda\obj\x86\Debug\GenerateResource.read.1.tlog
-d:\Visual Studio 2010\Projects\pogoda\pogoda\obj\x86\Debug\GenerateResource.write.1.tlog
 d:\visual studio 2010\Projects\pogoda\pogoda\obj\x86\Debug\pogoda.dodaj.resources
 d:\visual studio 2010\Projects\pogoda\pogoda\obj\x86\Debug\pogoda.Form2.resources
 d:\visual studio 2010\Projects\pogoda\pogoda\obj\x86\Debug\pogoda.Form3.resources
@@ -41,3 +38,5 @@ J:\Dropbox\Dropbox\c#\Projects\pogoda\pogoda\obj\x86\Debug\pogoda.Form2.resource
 J:\Dropbox\Dropbox\c#\Projects\pogoda\pogoda\obj\x86\Debug\pogoda.Form3.resources
 J:\Dropbox\Dropbox\c#\Projects\pogoda\pogoda\obj\x86\Debug\pogoda.Properties.Resources.resources
 J:\Dropbox\Dropbox\c#\Projects\pogoda\pogoda\obj\x86\Debug\pogoda.csproj.GenerateResource.Cache
+D:\Visual Studio 2010\Projects\pogoda\pogoda\obj\x86\Debug\pogoda.csprojResolveAssemblyReference.cache
+D:\Visual Studio 2010\Projects\pogoda\pogoda\obj\x86\Debug\pogoda.csproj.GenerateResource.Cache
