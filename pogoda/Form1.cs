@@ -13,9 +13,9 @@ namespace pogoda
     public partial class Form1 : Form
     {
         public Thread trd;
-        List<wiadomosc> ListaWiadomosci = new List<wiadomosc>();
+        List<Message> ListaWiadomosci = new List<Message>();
         List<string> ListaRSS = new List<string>();
-        obslugaXML xml = new obslugaXML();
+        RssRepository xml = new RssRepository();
         int MAX_ADRESY_RSS = 0;
         int AKTUALNY_ADRES_RSS = 0;
         
@@ -34,7 +34,7 @@ namespace pogoda
 
 
 
-            foreach (string adres in ListaRSS)
+            foreach (var adres in ListaRSS)
             {
                 contextMenuStrip1.Items.Add(adres);
             }
@@ -48,25 +48,27 @@ namespace pogoda
    
         private void DawajDane(string adres)
         {
-          
-            pogoda AktualnaPogoda = new pogoda("94cac1b2a3993022");
-            rss seriwisRSS = new rss(adres);
-            AktualnaPogoda.pobierzPogode();
+            var weatherModel = new WeatherModel("94cac1b2a3993022");
+            
+            var weatherDto = weatherModel.Get();
 
-            label1.Text = AktualnaPogoda.opis.ToString();
-            label2.Text = AktualnaPogoda.temperatura.ToString() + "°C";
-            label3.Text = AktualnaPogoda.temperatura_odczuwalna.ToString() + "°C";
-            label4.Text = AktualnaPogoda.cisnienie.ToString() + "hPa";
-            label6.Text = AktualnaPogoda.lokalizacja;
-            pictureBox1.Load(AktualnaPogoda.obrazek);
+            label1.Text = weatherDto.opis;
+            label2.Text = weatherDto.temperatura + "°C";
+            label3.Text = weatherDto.temperatura_odczuwalna + "°C";
+            label4.Text = weatherDto.cisnienie + "hPa";
+            label6.Text = weatherDto.lokalizacja;
+            pictureBox1.Load(weatherDto.obrazek);
+
+            var seriwisRSS = new Rss(adres);
+
             ListaWiadomosci = seriwisRSS.PobierzWiadomosci(); 
         }
         private void watki()
         {
 
             this.Text = ListaWiadomosci.ElementAt(AKTUALNY_ADRES_RSS).NazwaRSS;
-                string t = "";
-                for (int i=0;i<8;i++)
+                var t = "";
+                for (var i=0;i<8;i++)
                 {
                     t = t + " || " + (ListaWiadomosci.ElementAt(i).tekst);
                 }
@@ -74,7 +76,7 @@ namespace pogoda
 
 
               
-                ThreadStart b = new ThreadStart(delegate { PrzesuwanyTekst("                          " + t); });
+                var b = new ThreadStart(delegate { PrzesuwanyTekst("                          " + t); });
                 trd = new Thread(b);
                 trd.Start();
 
@@ -84,7 +86,7 @@ namespace pogoda
         private delegate void Delegacja();
         public void PrzesuwanyTekst(string t)
         {
-            for (int i = 0; i < ((t.Length *9)); i++)
+            for (var i = 0; i < ((t.Length *9)); i++)
                 {
                     if (label5.InvokeRequired)
                     {
@@ -165,7 +167,7 @@ namespace pogoda
         }
         private void contextMenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            ToolStripItem a =  e.ClickedItem;
+            var a =  e.ClickedItem;
 
             if (a.Text != "Dodaj RSS" && a.Text != "Usuń RSS")
             { 
@@ -180,13 +182,13 @@ namespace pogoda
 
         private void dodajToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            Form2 nowyRss = new Form2();
+            var nowyRss = new Form2();
             nowyRss.Show();
         }
 
         private void usuńRSSToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form3 usunRss = new Form3();
+            var usunRss = new Form3();
             usunRss.Show();
         }
 

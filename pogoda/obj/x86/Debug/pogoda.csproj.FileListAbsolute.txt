@@ -40,3 +40,4 @@ J:\Dropbox\Dropbox\c#\Projects\pogoda\pogoda\obj\x86\Debug\pogoda.Properties.Res
 J:\Dropbox\Dropbox\c#\Projects\pogoda\pogoda\obj\x86\Debug\pogoda.csproj.GenerateResource.Cache
 D:\Visual Studio 2010\Projects\pogoda\pogoda\obj\x86\Debug\pogoda.csprojResolveAssemblyReference.cache
 D:\Visual Studio 2010\Projects\pogoda\pogoda\obj\x86\Debug\pogoda.csproj.GenerateResource.Cache
+D:\Visual Studio 2010\Projects\pogoda\pogoda\bin\Debug\pogoda.exe.config

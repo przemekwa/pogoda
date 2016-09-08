@@ -7,20 +7,20 @@ using System.Windows.Forms;
 
 namespace pogoda
 {
-    class rss
+    class Rss
     {
         public string strona = "";
-        List<wiadomosc> Lista = new List<wiadomosc>();
+        List<Message> Lista = new List<Message>();
 
         XmlDocument xml = new XmlDocument();
  
-        public rss(string adres)
+        public Rss(string adres)
         {
             strona = adres;
            
         }
 
-        public List<wiadomosc> PobierzWiadomosci()
+        public List<Message> PobierzWiadomosci()
         {
             Xml();
 
@@ -49,7 +49,7 @@ namespace pogoda
                     string tekst = node.SelectSingleNode("description").InnerText;
                     tekst = UsunObrazek(tekst);
                     string data = node.SelectSingleNode("pubDate").InnerText;
-                    wiadomosc a = new wiadomosc(tytul, tekst, data, nazwa);
+                    Message a = new Message(tytul, tekst, data, nazwa);
                     Lista.Add(a);
                 }
 

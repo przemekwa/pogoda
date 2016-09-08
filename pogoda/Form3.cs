@@ -11,7 +11,7 @@ namespace pogoda
 {
     public partial class Form3 : Form
     {
-        obslugaXML xml = new obslugaXML();
+        RssRepository xml = new RssRepository();
         public Form3()
         {
             InitializeComponent();
