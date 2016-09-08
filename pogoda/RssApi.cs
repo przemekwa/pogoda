@@ -1,71 +1,77 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Xml;
-using System.IO;
-
+﻿
 namespace pogoda
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Globalization;
+    using System.Linq;
+    using System.Xml;
+    using System.IO;
+
     public class RssApi
     {
         private const string FILE_NAME = "rss.xml";
 
-        XmlDocument plik = new XmlDocument();
-
-        XmlNode node;
-
-        XmlNodeList nodes;
-
-        XmlAttribute atrybut;
-
-       public void CreateFile()
+        public void CreateFile()
         {
-            if (!File.Exists(FILE_NAME))
-            {
-                var nowy_xml = new XmlTextWriter(FILE_NAME, null);
-                nowy_xml.WriteStartDocument();
-                nowy_xml.WriteComment("Nazwa pliku " + FILE_NAME);
-                nowy_xml.WriteStartElement("RSS");
-                nowy_xml.WriteAttributeString("data", System.DateTime.Now.ToString().Substring(0, 10));
-                nowy_xml.WriteAttributeString("godzina", System.DateTime.Now.ToString().Substring(11));
-                nowy_xml.WriteEndElement();
-                nowy_xml.Close();
-            }
+           if (File.Exists(FILE_NAME))
+           {
+               return;
+           }
+
+           var newXml = new XmlTextWriter(FILE_NAME, null);
+
+           newXml.WriteStartDocument();
+           newXml.WriteComment("Nazwa pliku " + FILE_NAME);
+           newXml.WriteStartElement("RSS");
+           newXml.WriteAttributeString("data", DateTime.Now.ToString(CultureInfo.InvariantCulture).Substring(0, 10));
+           newXml.WriteAttributeString("godzina", DateTime.Now.ToString(CultureInfo.InvariantCulture).Substring(11));
+           newXml.WriteEndElement();
+
+           newXml.Close();
         }
        
-        public void Add(string zrodlo)
+        public void Add(string rssSource)
         {
-            plik.Load(FILE_NAME);
-                   
-            node = plik.CreateElement("zrodlo");
-            node.InnerText =zrodlo;
-            atrybut = plik.CreateAttribute("dataDodania");
-            atrybut.Value = System.DateTime.Now.ToString().Substring(0, 10);
-            node.Attributes.Append(atrybut);
-            plik.DocumentElement.AppendChild(node);
-            plik.Save(FILE_NAME);
-               
+            var xml = new XmlDocument();
+
+            xml.Load(FILE_NAME);
+
+            var xmlNode = xml.CreateElement("zrodlo");
+
+            xmlNode.InnerText = rssSource;
+
+            var xmlAttribute = xml.CreateAttribute("dataDodania");
+
+            xmlAttribute.Value = DateTime.Now.ToString(CultureInfo.InvariantCulture).Substring(0, 10);
+            xmlNode.Attributes?.Append(xmlAttribute);
+            xml.DocumentElement?.AppendChild(xmlNode);
+
+            xml.Save(FILE_NAME);
         }
         
         public List<string> Read()
         {
-            plik.Load(FILE_NAME);
+            var xml = new XmlDocument();
 
-            nodes = plik.SelectNodes("/RSS/zrodlo");
+            xml.Load(FILE_NAME);
 
-            return (from XmlNode n in nodes select n.InnerText).ToList();
+            var xmlNodeList = xml.SelectNodes("/RSS/zrodlo");
+
+            return (from XmlNode n in xmlNodeList select n.InnerText).ToList();
         }
        
         public void Delete(string nazwa)
         {
-            plik.Load(FILE_NAME);
+            var xml = new XmlDocument();
 
-            node = plik.SelectSingleNode("/RSS/zrodlo[. =\"" + nazwa + "\" ]");
+            xml.Load(FILE_NAME);
 
-            node?.ParentNode?.RemoveChild(node);
+            var xmlNode = xml.SelectSingleNode("/RSS/zrodlo[. =\"" + nazwa + "\" ]");
+
+            xmlNode?.ParentNode?.RemoveChild(xmlNode);
             
-            plik.Save(FILE_NAME);
+            xml.Save(FILE_NAME);
         }
     }
 }
