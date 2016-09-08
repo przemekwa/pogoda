@@ -29,15 +29,16 @@ namespace pogoda
             });
         }
 
-        private string RemoveImage(string t)
+        private string RemoveImage(string innerText)
         {
-            if (t == null)
+            if (innerText == null)
             {
                 return string.Empty;
             }
 
-            t = t.Substring(t.IndexOf(">") + 1);
-            return t.Replace("\r\n", " ").Replace("\n", " ").Replace("\r", " ").Replace("  ", "");
+            innerText = innerText.Substring(innerText.IndexOf(">") + 1);
+
+            return innerText.Replace("\r\n", " ").Replace("\n", " ").Replace("\r", " ").Replace("  ", "");
         }
     }
 }

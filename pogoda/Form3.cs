@@ -11,7 +11,7 @@ namespace pogoda
 {
     public partial class Form3 : Form
     {
-        SourceRepoApi xml = new SourceRepoApi();
+        RssSourceApi xml = new RssSourceApi();
         public Form3()
         {
             InitializeComponent();

@@ -8,7 +8,7 @@ namespace pogoda
     using System.Xml;
     using System.IO;
 
-    public class SourceRepoApi
+    public class RssSourceApi
     {
         private const string FILE_NAME = "rss.xml";
 
